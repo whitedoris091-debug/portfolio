@@ -2607,16 +2607,6 @@
             <span class="contact-card-hint">点击发送邮件</span>
           </a>
 
-          <!-- Phone -->
-          <div class="contact-card" id="contactPhone" onclick="copyPhone()">
-            <div class="contact-card-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12" y2="18"/></svg>
-            </div>
-            <span class="contact-card-label">手机号码</span>
-            <span class="contact-card-value">17875539557</span>
-            <span class="contact-card-hint">点击复制到剪贴板</span>
-          </div>
-
           <!-- WeChat -->
           <div class="contact-card" onclick="openWechatModal()">
             <div class="contact-card-icon">
@@ -2644,7 +2634,7 @@
       <button class="wechat-modal-close" onclick="closeWechatModal()">&times;</button>
       <h3 class="wechat-modal-title">微信扫码添加</h3>
       <img class="wechat-qr-img" src="https://i.ibb.co/wNwK4Twk/wechat-qrcode.png" alt="微信二维码" />
-      <p class="wechat-id">微信号：mihairailian-23</p>
+      <p class="wechat-id">长按或扫描二维码添加</p>
     </div>
   </div>
 
@@ -2915,7 +2905,7 @@
       { page: 'portfolio', pageLabel: '作品集', title: '划词达人 SwipeVocab', sub: 'MediaPipe · 多模态交互 · 手势识别 · 蓝牙手柄 · 四六级词库 · 错题本', keywords: '划词达人 SwipeVocab MediaPipe 手势识别 手柄 四六级 错题 英语学习' },
       { page: 'portfolio', pageLabel: '作品集', title: '作品集', sub: '全部作品项目列表', keywords: '作品集 portfolio 项目' },
       // CONTACT
-      { page: 'contact', pageLabel: '联系', title: '联系我', sub: '17875539557@163.com · 手机 17875539557 · 微信 mihairailian-23', keywords: '联系 contact 邮箱 手机 微信 17875539557 白幸平' },
+      { page: 'contact', pageLabel: '联系', title: '联系我', sub: '欢迎通过邮箱或微信联系我', keywords: '联系 contact 邮箱 微信 白幸平' },
     ];
 
     function performGlobalSearch(query) {
@@ -4838,15 +4828,15 @@
     }
 
     /* ========== CONTACT INTERACTIONS ========== */
-    function copyPhone() {
-      navigator.clipboard.writeText('17875539557').then(() => {
+    function copyEmail() {
+      navigator.clipboard.writeText('17875539557@163.com').then(() => {
         const toast = document.getElementById('copyToast');
         toast.classList.add('show');
         setTimeout(() => toast.classList.remove('show'), 2000);
       }).catch(() => {
         /* Fallback for older browsers */
         const ta = document.createElement('textarea');
-        ta.value = '17875539557';
+        ta.value = '17875539557@163.com';
         ta.style.position = 'fixed'; ta.style.opacity = '0';
         document.body.appendChild(ta);
         ta.select();
